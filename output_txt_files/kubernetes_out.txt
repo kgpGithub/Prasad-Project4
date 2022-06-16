@@ -1,0 +1,21 @@
+<paste log output from Kubernetes-mediated prediction, here>
+(.devops) (base) alinakhaliq@Alinas-MBP Project4 % kubectl get pod    
+NAME       READY   STATUS              RESTARTS   AGE
+project4   0/1     ContainerCreating   0          92s
+(.devops) (base) alinakhaliq@Alinas-MBP Project4 % kubectl get pod
+NAME       READY   STATUS    RESTARTS   AGE
+project4   1/1     Running   0          2m28s
+(.devops) (base) alinakhaliq@Alinas-MBP Project4 % ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "project4" already exists
+NAME       READY   STATUS    RESTARTS   AGE
+project4   1/1     Running   0          2m37s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+(base) alinakhaliq@Alinas-MBP Project4 % ./make_prediction.sh
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
